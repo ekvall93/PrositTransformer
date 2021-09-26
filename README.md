@@ -3,7 +3,7 @@
 prosit@transformer:~$ pip install -e .
 ```
 Everything that is required will be install except for Nvidia Apex. Install it here: https://github.com/NVIDIA/apex\
-However, Nvidia Apex is only required for training.
+However, only training requires Nvidia Apex
 # Data
 You can get the data in two ways.
 ### Prosit HDF5 to Tape LMDB
@@ -49,7 +49,14 @@ prosit@transformer:~$ torch2tf \
 --tf_model path/to/tf_model
 ```
 # Prediction
-To make prediction with you can use either
+To make predictions, you need Prosit HDF5-files to get correctly formatted result-files for further validation and downstream analysis.
+
+Download HDF5-files
+```console
+prosit@transformer:~$ bash downloadProsithdf5.sh
+```
+
+To make prediction you can use either
 ```console
 prosit@transformer:~$ predictTorch \
 --model /path/to/torch_model \
@@ -78,6 +85,15 @@ prosit@transformer:~$ validate \
 --torch_hdf5 /path/to/predict_result/torchResult.hdf5
 ```
 # Generate Prosit report
+
+To get a Prosit report you need to make a predicton with any of the functions mentioned above to get result.hdf5 file. You also need prosit hdf5-file which you can get by running 
+
+Download HDF5-files
+```console
+prosit@transformer:~$ bash downloadProsithdf5.sh
+```
+
+To get Prosit report run:
 ```console
 prosit@transformer:~$ cd prositReport
 Rscript report.R \
