@@ -40,6 +40,8 @@ prosit@transformer:~$ tape-train \
   --exp_name NAME \
   --model_config_file /path/to/config/file.json
 ```
+
+We have an example config file at config/prositTransformer.json
 # Model conversion
 In order to convert the Torch model to TensorFlow use:
 ```console
