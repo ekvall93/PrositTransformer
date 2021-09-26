@@ -31,7 +31,7 @@ def cli(model: Path, lmdb: Path, out_dir: Path, split: str, batch_size: int, pro
     predictions = list()
     for batch in tqdm(loader):
         predictions.append(model(**batch)[0].numpy())
-        break
+
     predictions = np.concatenate(predictions)
     
     if not out_dir.endswith("/"):

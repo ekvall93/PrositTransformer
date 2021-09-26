@@ -43,6 +43,8 @@ prosit@transformer:~$ tape-train \
 
 We have an example config file at config/prositTransformer.json
 # Model conversion
+#TODO: make it possible to download models
+
 In order to convert the Torch model to TensorFlow use:
 ```console
 prosit@transformer:~$ torch2tf \
@@ -87,6 +89,7 @@ prosit@transformer:~$ validate \
 --torch_hdf5 /path/to/predict_result/torchResult.hdf5
 ```
 # Generate Prosit report
+#TODO: Make it possible to download our final prediction file
 
 To get a Prosit report you need to make a predicton with any of the functions mentioned above to get result.hdf5 file. You also need prosit hdf5-file which you can get by running 
 
