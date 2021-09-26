@@ -20,7 +20,6 @@ setup(
     predictTorch=predictTorch:cli
     predictTF=predictTF:cli
     validate=validate:cli
-    tape2prosit=tape2prosit:cli
     prosit2tape=prosit2tape:cli
     '''
 )
